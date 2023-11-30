@@ -1,0 +1,33 @@
+export const preventZombieInstances = [
+  "--disable-gpu",
+  "--no-sandbox",
+  "--no-zygote",
+  "--single-process",
+];
+
+export const defaultArgs = [
+  "--disable-setuid-sandbox",
+  "--disable-infobars",
+  "--no-first-run",
+  // `--window-size=${options.width || 1280},${options.height || 800}`,
+  // "--window-size=1280,800",
+  "--window-position=0,0",
+  "--ignore-certificate-errors",
+  "--ignore-certificate-errors-skip-list",
+  "--disable-dev-shm-usage",
+  "--disable-accelerated-2d-canvas",
+  "--hide-scrollbars",
+  "--disable-notifications",
+  "--disable-background-timer-throttling",
+  "--disable-backgrounding-occluded-windows",
+  "--disable-breakpad",
+  "--disable-component-extensions-with-background-pages",
+  "--disable-extensions",
+  "--disable-features=TranslateUI,BlinkGenPropertyTrees",
+  "--disable-ipc-flooding-protection",
+  "--disable-renderer-backgrounding",
+  "--enable-features=NetworkService,NetworkServiceInProcess",
+  "--force-color-profile=srgb",
+  "--metrics-recording-only",
+  "--mute-audio",
+];

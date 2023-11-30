@@ -27,6 +27,12 @@
     "eslint-plugin-promise": "^6.0.0",
     "nodemon": "^3.0.1",
     "prettier": "3.1.0",
+    "puppeteer": "^21.5.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-anonymize-ua": "^2.4.6",
+    "puppeteer-extra-plugin-block-resources": "^2.4.3",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "regenerator-runtime": "^0.14.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
