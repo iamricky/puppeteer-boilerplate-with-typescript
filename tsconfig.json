@@ -14,7 +14,11 @@
     "sourceMap": true,
     "strict": true,
     "baseUrl": "./",
-    "paths": { "@/*": ["./src"], "@/puppeteer/*": ["src/puppeteer/*"] }
+    "paths": {
+      "@/*": ["./src"],
+      "@/drizzle/*": ["src/drizzle/*"],
+      "@/puppeteer/*": ["src/puppeteer/*"]
+    }
   },
   "ts-node": {
     "require": ["tsconfig-paths/register"],
