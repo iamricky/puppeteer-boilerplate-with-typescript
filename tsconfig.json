@@ -14,9 +14,10 @@
     "sourceMap": true,
     "strict": true,
     "baseUrl": "./",
-    "paths": {}
+    "paths": { "@/*": ["./src"], "@/puppeteer/*": ["src/puppeteer/*"] }
   },
   "ts-node": {
+    "require": ["tsconfig-paths/register"],
     "swc": true
   }
 }
