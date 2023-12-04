@@ -5,7 +5,7 @@ updates:
     directory: "/"
     schedule:
       day: saturday
-      interval: monthly
+      interval: weekly
       time: "00:00"
     open-pull-requests-limit: 5
     reviewers:
