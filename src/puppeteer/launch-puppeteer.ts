@@ -19,7 +19,7 @@ puppeteer.use(
     blockedTypes: new Set([
       "image",
       "other",
-      // 'stylesheet'
+      'stylesheet'
     ]),
     // Optionally enable Cooperative Mode for several request interceptors
     interceptResolutionPriority: DEFAULT_INTERCEPT_RESOLUTION_PRIORITY,
@@ -36,7 +36,7 @@ puppeteer.use(
 
 const puppeteerOptions: PuppeteerLaunchOptions = {
   // devtools: true,
-  // dumpio: true,
+  dumpio: true,
   // headless: "new",
   headless: false,
   ignoreHTTPSErrors: true,
@@ -45,8 +45,14 @@ const puppeteerOptions: PuppeteerLaunchOptions = {
   ]),
 };
 
-export async function launchPuppeteer(): Promise<[Browser, BrowserContext]> {
+export async function launchPuppeteer(): Promise <BrowserContext> {
   const browser = await puppeteer.launch(puppeteerOptions);
-  const browserContext = await browser.defaultBrowserContext();
-  return [browser, browserContext];
+  const browserContext = browser.defaultBrowserContext();
+
+  if (!browserContext) {
+    process.on("exit", () => console.error("Browser failed to launch."));
+    process.exit();
+  }
+
+  return browserContext;
 }
