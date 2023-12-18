@@ -36,7 +36,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "nodemon": "^3.0.2",
     "prettier": "3.1.0",
-    "regenerator-runtime": "^0.14.0",
+    "regenerator-runtime": "^0.14.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
   },
