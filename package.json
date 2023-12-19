@@ -29,7 +29,7 @@
     "drizzle-kit": "^0.20.6",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-config-standard-with-typescript": "^40.0.0",
+    "eslint-config-standard-with-typescript": "^42.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-prettier": "^5.0.1",
