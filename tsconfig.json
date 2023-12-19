@@ -17,7 +17,8 @@
     "paths": {
       "@/*": ["./src"],
       "@/drizzle/*": ["src/drizzle/*"],
-      "@/puppeteer/*": ["src/puppeteer/*"]
+      "@/puppeteer/*": ["src/puppeteer/*"],
+      "@/utils/*": ["src/utils/*/index.ts"]
     }
   },
   "ts-node": {
