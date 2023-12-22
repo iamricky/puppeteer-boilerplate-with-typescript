@@ -4,10 +4,11 @@ export type Task = z.infer<typeof TaskSchema>;
 
 const TaskFunctionsSchema = z.record(
   z.object({
-    path: z.string({
-      required_error: "A handler path is required for task functions.",
-      invalid_type_error: "Handler path must be a string.",
-    }),
+    path: z
+      .string({
+        invalid_type_error: "Handler path must be a string.",
+      })
+      .optional(),
     description: z.string().optional(),
   }),
 );

@@ -1,5 +1,10 @@
 name: Task A
 functions:
-  taskA:
-    path: task-a # name of (or path to) task function
+  taskA1: # name of task handler
+    path: task-a-1 # path to task file
+    description: optional description for tasks
+  taskA2:
+    # path is optional.
+    # looks for name of .yml by default.
+    # path: task.a.2
     description: optional description for tasks

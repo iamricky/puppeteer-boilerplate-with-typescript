@@ -16,8 +16,8 @@ async function getOptionsForTaskPrompt(): Promise<Choice[]> {
         .filter(({ payload }) => {
           const parseResults = TaskSchema.safeParse(payload);
           const hasErrors = !parseResults.success;
-          if (hasErrors) {
-            // add error logs
+          if (hasErrors && isNpmStartScript()) {
+            // display error logs
           }
           return parseResults.success;
         })
@@ -26,7 +26,7 @@ async function getOptionsForTaskPrompt(): Promise<Choice[]> {
 
           const results: Choice = {
             name: payload.name,
-            value: JSON.stringify(payload),
+            value: JSON.stringify(task),
           };
 
           if (payload.description) {
@@ -43,7 +43,7 @@ async function getOptionsForTaskPrompt(): Promise<Choice[]> {
   })();
 }
 
-export async function selectTaskPrompt() {
+export async function selectTaskPrompt(): Promise<string> {
   const choices = await getOptionsForTaskPrompt();
 
   if (choices.length === 0) {
