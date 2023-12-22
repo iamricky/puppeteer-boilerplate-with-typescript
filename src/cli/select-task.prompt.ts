@@ -16,7 +16,7 @@ async function getOptionsForTaskPrompt(): Promise<Choice[]> {
         .filter(({ payload }) => {
           const parseResults = TaskSchema.safeParse(payload);
           const hasErrors = !parseResults.success;
-          if (hasErrors && isNpmStartScript()) {
+          if (hasErrors && !isNpmStartScript()) {
             // display error logs
           }
           return parseResults.success;
