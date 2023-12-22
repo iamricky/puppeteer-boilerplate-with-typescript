@@ -1,5 +1,6 @@
+import { type Task } from "@/cli";
 import { findYamlFiles } from "./find-yaml-files";
-import { readYamlFile, type YamlFile } from "./read-yaml-file";
+import { readYamlFile } from "./read-yaml-file";
 
 const DEFAULT_DIRECTORY: string = "./src/tasks" as const;
 
@@ -7,9 +8,9 @@ const DEFAULT_DIRECTORY: string = "./src/tasks" as const;
  * Interface representing the result of reading a YAML file.
  */
 export interface YamlFileResult {
-  payload: YamlFile;
+  payload: Task;
   meta: {
-    path: string;
+    filePath: string;
   };
 }
 
@@ -24,13 +25,13 @@ export async function findAndReadYamlFiles(
   try {
     const yamlFiles = await findYamlFiles(directory);
     const fileContents = await Promise.all(
-      yamlFiles.map(async (path) => {
+      yamlFiles.map(async (filePath) => {
         try {
-          const payload = await readYamlFile(path);
-          return { meta: { path }, payload } as YamlFileResult;
+          const payload = await readYamlFile(filePath);
+          return { meta: { filePath }, payload } as YamlFileResult;
         } catch (readError) {
           console.error(
-            `Error while reading YAML file ${path}: ${readError.message}`,
+            `Error while reading YAML file ${filePath}: ${readError.message}`,
           );
           return null;
         }
