@@ -1,8 +1,8 @@
 export const preventZombieInstances = [
   "--disable-gpu",
-  "--no-sandbox",
+  // "--no-sandbox",
   "--no-zygote",
-  "--single-process",
+  // "--single-process",
 ];
 
 export const defaultArgs = [

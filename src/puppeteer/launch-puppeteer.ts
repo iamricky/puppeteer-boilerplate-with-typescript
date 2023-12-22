@@ -16,11 +16,7 @@ puppeteer.use(AnonymizeUserAgentPlugin());
 
 puppeteer.use(
   BlockResourcesPlugin({
-    blockedTypes: new Set([
-      "image",
-      "other",
-      'stylesheet'
-    ]),
+    blockedTypes: new Set(["image", "other", "stylesheet"]),
     // Optionally enable Cooperative Mode for several request interceptors
     interceptResolutionPriority: DEFAULT_INTERCEPT_RESOLUTION_PRIORITY,
   }),
@@ -36,18 +32,19 @@ puppeteer.use(
 
 const puppeteerOptions: PuppeteerLaunchOptions = {
   // devtools: true,
-  dumpio: true,
+  // dumpio: true,
   // headless: "new",
   headless: false,
   ignoreHTTPSErrors: true,
   args: defaultArgs.concat(preventZombieInstances, [
+    "--incognito",
     // "--headless"
   ]),
 };
 
-export async function launchPuppeteer(): Promise <BrowserContext> {
+export async function launchPuppeteer(): Promise<BrowserContext> {
   const browser = await puppeteer.launch(puppeteerOptions);
-  const browserContext = browser.defaultBrowserContext();
+  const browserContext = await browser.createIncognitoBrowserContext();
 
   if (!browserContext) {
     process.on("exit", () => console.error("Browser failed to launch."));
