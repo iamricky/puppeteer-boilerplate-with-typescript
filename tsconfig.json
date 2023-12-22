@@ -15,9 +15,11 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src"],
+      "@/*": ["src/*"],
       "@/drizzle/*": ["src/drizzle/*"],
-      "@/puppeteer/*": ["src/puppeteer/*"]
+      "@/puppeteer/*": ["src/puppeteer/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/cli/*": ["src/cli/*"]
     }
   },
   "ts-node": {

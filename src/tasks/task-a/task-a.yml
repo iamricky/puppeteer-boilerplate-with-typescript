@@ -1,0 +1,5 @@
+name: Task A
+functions:
+  taskA:
+    path: task-a # name of (or path to) task function
+    description: optional description for tasks
