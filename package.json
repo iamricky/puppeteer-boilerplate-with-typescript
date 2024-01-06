@@ -29,7 +29,7 @@
     "@types/node": "^20.10.4",
     "@types/pg": "^8.10.9",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.13.1",
+    "@typescript-eslint/parser": "^6.17.0",
     "drizzle-kit": "^0.20.6",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
